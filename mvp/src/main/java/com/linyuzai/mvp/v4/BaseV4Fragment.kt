@@ -1,10 +1,11 @@
-package com.linyuzai.mvp.base
+package com.linyuzai.mvp.v4
 
-import android.app.Fragment
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.linyuzai.mvp.base.UIComponent
 import com.linyuzai.mvp.theme.MicroTheme
 import com.linyuzai.mvp.theme.MicroThemeChangeable
 import com.linyuzai.mvp.theme.MicroThemeManager
@@ -14,7 +15,7 @@ import com.linyuzai.mvp.theme.MicroThemeManager
  * The base fragment to extends
  * @author linyuzai
  */
-abstract class BaseFragment : Fragment(), UIComponent, MicroThemeChangeable {
+abstract class BaseV4Fragment : Fragment(), UIComponent, MicroThemeChangeable {
 
     private var isViewCreated: Boolean = false
 

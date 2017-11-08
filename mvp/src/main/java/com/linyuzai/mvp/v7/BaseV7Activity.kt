@@ -1,7 +1,8 @@
-package com.linyuzai.mvp.base
+package com.linyuzai.mvp.v7
 
-import android.app.Activity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+import com.linyuzai.mvp.base.UIComponent
 import com.linyuzai.mvp.theme.MicroTheme
 import com.linyuzai.mvp.theme.MicroThemeChangeable
 import com.linyuzai.mvp.theme.MicroThemeManager
@@ -11,7 +12,7 @@ import com.linyuzai.mvp.theme.MicroThemeManager
  * The base activity to extends
  * @author linyuzai
  */
-abstract class BaseActivity : Activity(), UIComponent, MicroThemeChangeable {
+abstract class BaseV7Activity : AppCompatActivity(), UIComponent, MicroThemeChangeable {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         layout()

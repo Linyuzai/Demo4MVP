@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 26
@@ -7,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 3
-        versionName "0.1.2"
+        versionCode 7
+        versionName "0.2.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -30,3 +31,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     provided "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
+
+apply from: "bintray.gradle"
