@@ -21,7 +21,9 @@ abstract class BaseV4Fragment : Fragment(), UIComponent, MicroThemeChangeable {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = layout(inflater, container)
-        onThemeChange(MicroThemeManager.getCurrentTheme())
+        val theme = MicroThemeManager.getCurrentTheme()
+        if (theme != null)
+            onThemeChange(theme)
         view(savedInstanceState)
         isViewCreated = true
         MicroThemeManager.register(this)

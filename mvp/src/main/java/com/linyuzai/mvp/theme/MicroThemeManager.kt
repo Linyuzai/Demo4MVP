@@ -9,7 +9,7 @@ object MicroThemeManager {
     private val listeners: MutableList<MicroThemeChangeable> = arrayListOf()
     private var store: ((Int) -> Unit)? = null
     private var restore: (() -> Int)? = null
-    private lateinit var currentTheme: MicroTheme
+    private var currentTheme: MicroTheme? = null
     private var currentThemeIndex: Int = 0
 
     fun init() {
@@ -31,12 +31,14 @@ object MicroThemeManager {
 
     fun changeTheme(index: Int) {
         currentThemeIndex = index
-        currentTheme = themes[currentThemeIndex]
-        listeners.forEach { it.onThemeChange(currentTheme) }
-        store?.invoke(currentThemeIndex)
+        if (currentThemeIndex < themes.size) {
+            currentTheme = themes[currentThemeIndex]
+            listeners.forEach { it.onThemeChange(currentTheme!!) }
+            store?.invoke(currentThemeIndex)
+        }
     }
 
-    fun getCurrentTheme(): MicroTheme = currentTheme
+    fun getCurrentTheme(): MicroTheme? = currentTheme
 
     fun getCurrentThemeIndex(): Int = currentThemeIndex
 

@@ -10,7 +10,7 @@ import com.linyuzai.mvp.IView
  * The mvp activity to extends
  * @author linyuzai
  */
-abstract class MvpV7Activity<out T : IPresenter> : BaseV7Activity(), IView<T> {
+abstract class MvpV7Activity<out T : IPresenter<IView<*>>> : BaseV7Activity(), IView<T> {
 
     private lateinit var presenter: T
 

@@ -15,7 +15,9 @@ abstract class BaseActivity : Activity(), UIComponent, MicroThemeChangeable {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         layout()
-        onThemeChange(MicroThemeManager.getCurrentTheme())
+        val theme = MicroThemeManager.getCurrentTheme()
+        if (theme != null)
+            onThemeChange(theme)
         view(savedInstanceState)
         MicroThemeManager.register(this)
     }

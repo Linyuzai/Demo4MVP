@@ -16,7 +16,9 @@ abstract class BaseV7Activity : AppCompatActivity(), UIComponent, MicroThemeChan
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         layout()
-        onThemeChange(MicroThemeManager.getCurrentTheme())
+        val theme = MicroThemeManager.getCurrentTheme()
+        if (theme != null)
+            onThemeChange(theme)
         view(savedInstanceState)
         MicroThemeManager.register(this)
     }

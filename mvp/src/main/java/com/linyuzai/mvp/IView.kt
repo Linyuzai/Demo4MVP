@@ -5,7 +5,7 @@ package com.linyuzai.mvp
  * @see IPresenter use this interface to update activity
  * @author linyuzai
  */
-interface IView<out T : IPresenter> {
+interface IView<out T> {
     /**
      * Inject a presenter
      * @return Presenter instance

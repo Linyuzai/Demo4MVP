@@ -12,7 +12,7 @@ import com.linyuzai.mvp.base.BaseFragment
  * The mvp fragment to extends
  * @author linyuzai
  */
-abstract class MvpFragment<out T : IPresenter> : BaseFragment(), IView<T> {
+abstract class MvpFragment<out T : IPresenter<IView<*>>> : BaseFragment(), IView<T> {
 
     private lateinit var presenter: T
 

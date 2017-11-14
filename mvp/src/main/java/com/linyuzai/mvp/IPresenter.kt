@@ -5,4 +5,6 @@ package com.linyuzai.mvp
  * activity use this interface to processing data
  * @author linyuzai
  */
-interface IPresenter
+interface IPresenter<out T> {
+    fun view(): T
+}
