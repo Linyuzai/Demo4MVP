@@ -37,4 +37,4 @@ dependencies {
     //provided 'com.trello.rxlifecycle2:rxlifecycle-android-lifecycle-kotlin:2.2.0'
 }
 
-//apply from: "bintray.gradle"
+apply from: "bintray.gradle"
