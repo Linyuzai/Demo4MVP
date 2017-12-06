@@ -7,7 +7,10 @@ import com.linyuzai.mvp.base.Presenter
  */
 class MainPresenter constructor(view: MainContract.View) : Presenter<MainContract.View>(view), MainContract.Presenter {
 
-    fun test(){
-
+    fun test() {
+        var index = 0
+        arrayListOf<Int>().forEach {
+            index += it
+        }
     }
 }
